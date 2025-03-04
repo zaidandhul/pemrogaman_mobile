@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'I Am A Sunflower',
+      theme: ThemeData(
+        primarySwatch: Colors.yellow,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: SunflowerScreen(),
+    );
+  }
+}
+
+class SunflowerScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('I Am A Sunflower'),
+        backgroundColor: Colors.yellow[700],
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(height: 20),
+              Image.network(
+                'https://apps.rhs.org.uk/plantselectorimages/detail/RHS_PUB0017345_8173.JPG', // Ganti dengan URL gambar yang sesuai
+                height: 250,
+                width: 250,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(height: 20),
+              Text(
+                'I Am A Sunflower',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.yellow[900],
+                  fontFamily: 'Roboto',
+                ),
+              ),
+              SizedBox(height: 3),
+              // Container dengan background warna orange
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  color: Colors.yellow[700],
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    'Bunga matahari merupakan simbol kepositifan, harapan, dan kekuatan. Bunga ini menghadap ke matahari, yang melambangkan cahaya dalam kehidupan yang harus selalu kita cari, bahkan di saat-saat tergelap sekalipun. Seperti bunga matahari, kita harus selalu berusaha untuk tetap positif dan memancarkan cahaya kepada orang-orang di sekitar kita.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontFamily: 'Roboto',
+                      height: 1.3,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
